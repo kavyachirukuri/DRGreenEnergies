@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { COMPANY } from "@/lib/company";
 
 type PropertyType = "Residential" | "Commercial" | "Industrial" | "Other";
 
@@ -42,17 +43,34 @@ export function ContactForm() {
     setSubmitted(false);
 
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(form),
-      });
+      // Email sending disabled – uncomment to send inquiry to email via /api/contact
+      // const response = await fetch("/api/contact", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify(form),
+      // });
+      // if (!response.ok) {
+      //   throw new Error("Failed to submit inquiry");
+      // }
 
-      if (!response.ok) {
-        throw new Error("Failed to submit inquiry");
-      }
+      const whatsappMessage = [
+        "New solar inquiry",
+        "",
+        `Name: ${form.name}`,
+        `Phone: ${form.phone}`,
+        `Email: ${form.email}`,
+        `Property Type: ${form.propertyType}`,
+        `Monthly Bill: ${form.monthlyBill}`,
+        `Location: ${form.location}`,
+        form.message ? `Details: ${form.message}` : "",
+      ]
+        .filter(Boolean)
+        .join("\n");
+
+      const whatsappUrl = `https://wa.me/${COMPANY.whatsapp}?text=${encodeURIComponent(whatsappMessage)}`;
+      window.open(whatsappUrl, "_blank", "noopener,noreferrer");
 
       setSubmitted(true);
       setForm(initialState);

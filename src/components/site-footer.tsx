@@ -1,13 +1,21 @@
 import Link from "next/link";
+import { COMPANY, addressSingleLine } from "@/lib/company";
 
 export function SiteFooter() {
   return (
     <footer className="mt-16 border-t border-slate-200 bg-slate-50">
-      <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-8 text-sm text-slate-600 md:flex-row md:items-center md:justify-between md:px-6">
-        <p>
-          © {new Date().getFullYear()} SunPeak Energy. All rights reserved.
-        </p>
-        <div className="flex flex-wrap gap-4">
+      <div className="mx-auto max-w-7xl px-4 py-6 md:px-6">
+        <div className="flex flex-col gap-6 text-sm text-slate-600 md:flex-row md:items-start md:justify-between">
+          <div className="space-y-1">
+            <p className="font-semibold text-slate-900">{COMPANY.name}</p>
+            <p className="max-w-sm">{addressSingleLine}</p>
+            <p>
+              <a href={`tel:${COMPANY.phone.replace(/\s/g, "")}`} className="text-amber-600 hover:text-amber-700">
+                {COMPANY.phone}
+              </a>
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-4">
           <Link
             href="/privacy"
             className="transition-colors hover:text-amber-500"
@@ -21,6 +29,10 @@ export function SiteFooter() {
             Terms of Service
           </Link>
         </div>
+          </div>
+        <p className="mt-4 border-t border-slate-200 pt-4 text-xs text-slate-500">
+          © {new Date().getFullYear()} {COMPANY.name}. All rights reserved.
+        </p>
       </div>
     </footer>
   );

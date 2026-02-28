@@ -58,7 +58,7 @@ export default function ProjectsPage() {
         <h1 className="text-3xl font-semibold text-slate-900">Projects</h1>
         <p className="mt-3 max-w-3xl text-sm text-slate-600">
           A snapshot of residential, commercial and industrial solar projects
-          executed by SunPeak Energy. Each project is engineered for high
+          executed by DR Green Energies. Each project is engineered for high
           performance, safety and long-term reliability.
         </p>
       </section>

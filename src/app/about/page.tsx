@@ -4,7 +4,7 @@ export default function AboutPage() {
       <section>
         <h1 className="text-3xl font-semibold text-slate-900">About Us</h1>
         <p className="mt-3 max-w-3xl text-sm text-slate-600">
-          SunPeak Energy is a turnkey solar EPC company focused on delivering
+          DR Green Energies is a turnkey solar EPC company focused on delivering
           bankable, high-performance solar plants for residential, commercial
           and industrial customers. Our in-house engineering, procurement and
           construction teams work together to ensure predictable generation,

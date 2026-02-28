@@ -1,9 +1,10 @@
 export default function Home() {
   return (
-    <div className="space-y-16">
-      {/* Hero Section */}
-      <section className="section grid gap-10 rounded-3xl bg-gradient-to-r from-slate-900 via-slate-900 to-slate-800 px-6 py-10 text-slate-50 md:grid-cols-2 md:px-10 md:py-14">
-        <div className="space-y-6">
+    <div className="space-y-8">
+      {/* Hero Section - full width */}
+      <section className="relative left-1/2 right-0 -ml-[50vw] w-screen bg-gradient-to-r from-slate-900 via-slate-900 to-slate-800 text-slate-50 animate-fade-in">
+        <div className="mx-auto grid max-w-7xl gap-8 px-4 py-8 md:grid-cols-2 md:px-6 md:py-10">
+        <div className="space-y-4">
           <p className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-amber-300 ring-1 ring-white/20">
             Premium Solar EPC Partner
           </p>
@@ -11,7 +12,7 @@ export default function Home() {
             Go solar with a trusted partner and cut your energy bills.
           </h1>
           <p className="max-w-xl text-base leading-relaxed text-slate-200">
-            SunPeak Energy designs, engineers, and commissions high-performance
+            DR Green Energies designs, engineers, and commissions high-performance
             solar plants for residential, commercial, and industrial customers –
             with complete end-to-end project ownership.
           </p>
@@ -58,16 +59,17 @@ export default function Home() {
             </p>
           </div>
         </div>
+        </div>
       </section>
 
       {/* Services Overview */}
-      <section className="section">
-        <div className="section-header flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+      <section className="section animate-slide-up animation-delay-100 opacity-0 [animation-fill-mode:forwards]">
+        <div className="section-header flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
           <div>
-            <h2 className="text-2xl font-semibold text-slate-900">
+            <h2 className="text-xl font-semibold text-slate-900 md:text-2xl">
               Solar solutions for every segment
             </h2>
-            <p className="mt-1 text-sm text-slate-600">
+            <p className="mt-0.5 text-sm text-slate-600">
               Tailored solar EPC services for homes, businesses and industries.
             </p>
           </div>
@@ -78,7 +80,7 @@ export default function Home() {
             View all services →
           </a>
         </div>
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-3">
           {[
             {
               title: "Residential Solar",
@@ -99,7 +101,7 @@ export default function Home() {
             <a
               key={service.href}
               href={service.href}
-              className="group flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-amber-400 hover:shadow-md"
+              className="group flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-amber-400 hover:shadow-md"
             >
               <div>
                 <h3 className="text-base font-semibold text-slate-900">
@@ -116,14 +118,14 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="section">
+      <section className="section animate-slide-up animation-delay-200 opacity-0 [animation-fill-mode:forwards]">
         <div className="section-header">
-          <h2 className="text-2xl font-semibold text-slate-900">
-            Why customers choose SunPeak Energy
+          <h2 className="text-xl font-semibold text-slate-900 md:text-2xl">
+            Why customers choose DR Green Energies
           </h2>
         </div>
-        <div className="grid gap-6 md:grid-cols-3">
-          <div className="rounded-2xl border border-slate-200 bg-white p-5">
+        <div className="grid gap-4 md:grid-cols-3">
+          <div className="rounded-xl border border-slate-200 bg-white p-4">
             <h3 className="text-sm font-semibold text-slate-900">
               End-to-end EPC ownership
             </h3>
@@ -132,7 +134,7 @@ export default function Home() {
               – handled by a single expert team.
             </p>
           </div>
-          <div className="rounded-2xl border border-slate-200 bg-white p-5">
+          <div className="rounded-xl border border-slate-200 bg-white p-4">
             <h3 className="text-sm font-semibold text-slate-900">
               Tier-1 components & bankable designs
             </h3>
@@ -141,7 +143,7 @@ export default function Home() {
               optimal generation and long-term reliability.
             </p>
           </div>
-          <div className="rounded-2xl border border-slate-200 bg-white p-5">
+          <div className="rounded-xl border border-slate-200 bg-white p-4">
             <h3 className="text-sm font-semibold text-slate-900">
               Transparent ROI & subsidy guidance
             </h3>
@@ -154,13 +156,13 @@ export default function Home() {
       </section>
 
       {/* Process Overview */}
-      <section className="section">
-        <div className="section-header flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+      <section className="section animate-slide-up animation-delay-200 opacity-0 [animation-fill-mode:forwards]">
+        <div className="section-header flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
           <div>
-            <h2 className="text-2xl font-semibold text-slate-900">
+            <h2 className="text-xl font-semibold text-slate-900 md:text-2xl">
               Simple, transparent project process
             </h2>
-            <p className="mt-1 text-sm text-slate-600">
+            <p className="mt-0.5 text-sm text-slate-600">
               A proven 5-step journey from first call to commissioning.
             </p>
           </div>
@@ -171,7 +173,7 @@ export default function Home() {
             View detailed process →
           </a>
         </div>
-        <ol className="grid gap-4 text-sm md:grid-cols-5">
+        <ol className="grid gap-3 text-sm md:grid-cols-5">
           {[
             "Consultation",
             "Site Survey",
@@ -181,7 +183,7 @@ export default function Home() {
           ].map((step, index) => (
             <li
               key={step}
-              className="flex flex-col rounded-2xl border border-slate-200 bg-white p-4"
+              className="flex flex-col rounded-xl border border-slate-200 bg-white p-3"
             >
               <span className="mb-2 inline-flex h-7 w-7 items-center justify-center rounded-full bg-amber-400 text-xs font-semibold text-slate-900">
                 {index + 1}
@@ -193,13 +195,13 @@ export default function Home() {
       </section>
 
       {/* Project Showcase */}
-      <section className="section">
-        <div className="section-header flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+      <section className="section animate-slide-up animation-delay-300 opacity-0 [animation-fill-mode:forwards]">
+        <div className="section-header flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
           <div>
-            <h2 className="text-2xl font-semibold text-slate-900">
+            <h2 className="text-xl font-semibold text-slate-900 md:text-2xl">
               Recent solar projects
             </h2>
-            <p className="mt-1 text-sm text-slate-600">
+            <p className="mt-0.5 text-sm text-slate-600">
               A snapshot of residential, commercial and industrial installations.
             </p>
           </div>
@@ -210,7 +212,7 @@ export default function Home() {
             Explore all projects →
           </a>
         </div>
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-3">
           {[
             {
               segment: "Residential",
@@ -233,7 +235,7 @@ export default function Home() {
           ].map((project) => (
             <article
               key={project.size + project.segment}
-              className="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-5"
+              className="flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-4"
             >
               <div>
                 <p className="text-xs font-semibold uppercase tracking-wide text-amber-500">
@@ -253,10 +255,10 @@ export default function Home() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="section rounded-3xl bg-white px-6 py-10 shadow-sm ring-1 ring-slate-200 md:px-10">
-        <div className="grid gap-6 md:grid-cols-[2fr,1fr] md:items-center">
+      <section className="section animate-slide-up animation-delay-300 rounded-2xl bg-white px-5 py-8 shadow-sm ring-1 ring-slate-200 md:px-8 opacity-0 [animation-fill-mode:forwards]">
+        <div className="grid gap-4 md:grid-cols-[2fr,1fr] md:items-center">
           <div>
-            <h2 className="text-2xl font-semibold text-slate-900">
+            <h2 className="text-xl font-semibold text-slate-900 md:text-2xl">
               Ready to explore solar for your property?
             </h2>
             <p className="mt-2 text-sm text-slate-600">

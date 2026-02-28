@@ -14,13 +14,13 @@ const navLinks = [
 export function SiteHeader() {
   return (
     <header className="border-b border-slate-200 bg-white/90 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 md:px-6">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-6">
         <Link href="/" className="flex items-baseline gap-2">
           <span className="rounded-full bg-amber-400 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-slate-900">
             Solar EPC
           </span>
           <span className="text-lg font-semibold text-slate-900">
-            SunPeak Energy
+            DR Green Energies
           </span>
         </Link>
         <nav className="hidden gap-6 text-sm font-medium text-slate-700 md:flex">

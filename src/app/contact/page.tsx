@@ -1,11 +1,11 @@
 import { ContactForm } from "@/components/contact-form";
+import { COMPANY, addressSingleLine } from "@/lib/company";
 
-const PHONE = "+91-12345-67890";
-const EMAIL = "hello@sunpeakenergy.com";
-const WHATSAPP_NUMBER = "911234567890";
+const { lat, lng } = COMPANY.coordinates;
+const mapEmbedUrl = `https://www.google.com/maps?q=${lat},${lng}&z=18&output=embed`;
 
 export default function ContactPage() {
-  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+  const whatsappUrl = `https://wa.me/${COMPANY.whatsapp}?text=${encodeURIComponent(
     "Hi, I would like to explore solar for my property.",
   )}`;
 
@@ -20,23 +20,36 @@ export default function ContactPage() {
             and schedule a consultation.
           </p>
           <div className="mt-6 space-y-3 text-sm text-slate-700">
+            <p className="font-semibold text-slate-900">{COMPANY.name}</p>
+            <p className="text-slate-600">
+              {COMPANY.address.line1}
+              <br />
+              {COMPANY.address.line2}
+              <br />
+              {COMPANY.address.line3}
+              <br />
+              {COMPANY.address.state}
+            </p>
             <p>
-              <span className="font-semibold">Phone:</span>{" "}
+              <span className="font-semibold">Mobile:</span>{" "}
               <a
-                href={`tel:${PHONE}`}
+                href={`tel:${COMPANY.phone.replace(/\s/g, "")}`}
                 className="text-amber-500 hover:text-amber-600"
               >
-                {PHONE}
+                {COMPANY.phone}
               </a>
             </p>
             <p>
               <span className="font-semibold">Email:</span>{" "}
               <a
-                href={`mailto:${EMAIL}`}
+                href={`mailto:${COMPANY.email}`}
                 className="text-amber-500 hover:text-amber-600"
               >
-                {EMAIL}
+                {COMPANY.email}
               </a>
+            </p>
+            <p>
+              <span className="font-semibold">GST No.:</span> {COMPANY.gst}
             </p>
             <p>
               <span className="font-semibold">WhatsApp:</span>{" "}
@@ -54,16 +67,16 @@ export default function ContactPage() {
         <div className="rounded-2xl border border-slate-200 bg-white p-4">
           <div className="aspect-[4/3] w-full overflow-hidden rounded-xl bg-slate-100">
             <iframe
-              title="SunPeak Energy location"
-              src="https://www.google.com/maps/embed?pb="
+              title={`${COMPANY.name} location`}
+              src={mapEmbedUrl}
               className="h-full w-full border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
             />
           </div>
           <p className="mt-2 text-xs text-slate-500">
-            Exact office location and map embed to be updated with your
-            preferred address.
+            {addressSingleLine}
           </p>
         </div>
       </section>
@@ -81,4 +94,3 @@ export default function ContactPage() {
     </div>
   );
 }
-

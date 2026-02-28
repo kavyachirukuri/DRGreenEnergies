@@ -26,7 +26,7 @@ export async function POST(req: NextRequest) {
     } = body;
 
     await transporter.sendMail({
-      from: `"Solar Website" <${process.env.GMAIL_USER}>`,
+      from: `"DR Green Energies" <${process.env.GMAIL_USER}>`,
       to: process.env.CONTACT_TO || process.env.GMAIL_USER,
       subject: `New solar inquiry from ${name}`,
       text: `
