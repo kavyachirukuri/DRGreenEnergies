@@ -84,13 +84,13 @@ export function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5"
+      className="space-y-4 rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm sm:p-5"
     >
       <div className="grid gap-4 md:grid-cols-2">
         <div className="space-y-1">
           <label
             htmlFor="name"
-            className="text-xs font-semibold uppercase tracking-wide text-slate-700"
+            className="text-xs font-semibold uppercase tracking-wide text-neutral-700"
           >
             Name
           </label>
@@ -100,13 +100,13 @@ export function ContactForm() {
             required
             value={form.name}
             onChange={handleChange}
-            className="min-h-[44px] w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2.5 text-base text-slate-900 outline-none ring-amber-400/0 transition focus:bg-white focus:ring-2 sm:py-2 sm:text-sm"
+            className="min-h-[44px] w-full rounded-lg border border-neutral-200 bg-[#fef9c3]/30 px-3 py-2.5 text-base text-black outline-none ring-green-500/0 transition focus:bg-white focus:ring-2 sm:py-2 sm:text-sm"
           />
         </div>
         <div className="space-y-1">
           <label
             htmlFor="phone"
-            className="text-xs font-semibold uppercase tracking-wide text-slate-700"
+            className="text-xs font-semibold uppercase tracking-wide text-neutral-700"
           >
             Phone
           </label>
@@ -117,7 +117,7 @@ export function ContactForm() {
             required
             value={form.phone}
             onChange={handleChange}
-            className="min-h-[44px] w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2.5 text-base text-slate-900 outline-none ring-amber-400/0 transition focus:bg-white focus:ring-2 sm:py-2 sm:text-sm"
+            className="min-h-[44px] w-full rounded-lg border border-neutral-200 bg-[#fef9c3]/30 px-3 py-2.5 text-base text-black outline-none ring-green-500/0 transition focus:bg-white focus:ring-2 sm:py-2 sm:text-sm"
           />
         </div>
       </div>
@@ -126,7 +126,7 @@ export function ContactForm() {
         <div className="space-y-1">
           <label
             htmlFor="email"
-            className="text-xs font-semibold uppercase tracking-wide text-slate-700"
+            className="text-xs font-semibold uppercase tracking-wide text-neutral-700"
           >
             Email
           </label>
@@ -137,13 +137,13 @@ export function ContactForm() {
             required
             value={form.email}
             onChange={handleChange}
-            className="min-h-[44px] w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2.5 text-base text-slate-900 outline-none ring-amber-400/0 transition focus:bg-white focus:ring-2 sm:py-2 sm:text-sm"
+            className="min-h-[44px] w-full rounded-lg border border-neutral-200 bg-[#fef9c3]/30 px-3 py-2.5 text-base text-black outline-none ring-green-500/0 transition focus:bg-white focus:ring-2 sm:py-2 sm:text-sm"
           />
         </div>
         <div className="space-y-1">
           <label
             htmlFor="propertyType"
-            className="text-xs font-semibold uppercase tracking-wide text-slate-700"
+            className="text-xs font-semibold uppercase tracking-wide text-neutral-700"
           >
             Property Type
           </label>
@@ -153,7 +153,7 @@ export function ContactForm() {
             required
             value={form.propertyType}
             onChange={handleChange}
-            className="min-h-[44px] w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2.5 text-base text-slate-900 outline-none ring-amber-400/0 transition focus:bg-white focus:ring-2 sm:py-2 sm:text-sm"
+            className="min-h-[44px] w-full rounded-lg border border-neutral-200 bg-[#fef9c3]/30 px-3 py-2.5 text-base text-black outline-none ring-green-500/0 transition focus:bg-white focus:ring-2 sm:py-2 sm:text-sm"
           >
             <option value="">Select</option>
             <option value="Residential">Residential</option>
@@ -168,7 +168,7 @@ export function ContactForm() {
         <div className="space-y-1">
           <label
             htmlFor="monthlyBill"
-            className="text-xs font-semibold uppercase tracking-wide text-slate-700"
+            className="text-xs font-semibold uppercase tracking-wide text-neutral-700"
           >
             Monthly Bill (approx.)
           </label>
@@ -178,13 +178,13 @@ export function ContactForm() {
             required
             value={form.monthlyBill}
             onChange={handleChange}
-            className="min-h-[44px] w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2.5 text-base text-slate-900 outline-none ring-amber-400/0 transition focus:bg-white focus:ring-2 sm:py-2 sm:text-sm"
+            className="min-h-[44px] w-full rounded-lg border border-neutral-200 bg-[#fef9c3]/30 px-3 py-2.5 text-base text-black outline-none ring-green-500/0 transition focus:bg-white focus:ring-2 sm:py-2 sm:text-sm"
           />
         </div>
         <div className="space-y-1">
           <label
             htmlFor="location"
-            className="text-xs font-semibold uppercase tracking-wide text-slate-700"
+            className="text-xs font-semibold uppercase tracking-wide text-neutral-700"
           >
             Location
           </label>
@@ -194,7 +194,7 @@ export function ContactForm() {
             required
             value={form.location}
             onChange={handleChange}
-            className="min-h-[44px] w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2.5 text-base text-slate-900 outline-none ring-amber-400/0 transition focus:bg-white focus:ring-2 sm:py-2 sm:text-sm"
+            className="min-h-[44px] w-full rounded-lg border border-neutral-200 bg-[#fef9c3]/30 px-3 py-2.5 text-base text-black outline-none ring-green-500/0 transition focus:bg-white focus:ring-2 sm:py-2 sm:text-sm"
           />
         </div>
       </div>
@@ -202,7 +202,7 @@ export function ContactForm() {
       <div className="space-y-1">
         <label
           htmlFor="message"
-          className="text-xs font-semibold uppercase tracking-wide text-slate-700"
+          className="text-xs font-semibold uppercase tracking-wide text-neutral-700"
         >
           Additional details (optional)
         </label>
@@ -212,7 +212,7 @@ export function ContactForm() {
           rows={3}
           value={form.message}
           onChange={handleChange}
-          className="min-h-[44px] w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2.5 text-base text-slate-900 outline-none ring-amber-400/0 transition focus:bg-white focus:ring-2 sm:py-2 sm:text-sm"
+          className="min-h-[44px] w-full rounded-lg border border-neutral-200 bg-[#fef9c3]/30 px-3 py-2.5 text-base text-black outline-none ring-green-500/0 transition focus:bg-white focus:ring-2 sm:py-2 sm:text-sm"
         />
       </div>
 
@@ -220,7 +220,7 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={submitting}
-          className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-amber-400 px-6 py-3 text-sm font-semibold text-slate-900 shadow-sm transition hover:bg-amber-300 active:bg-amber-500 disabled:opacity-70"
+          className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-[#16a34a] px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#15803d] active:bg-green-700 disabled:opacity-70"
         >
           {submitting ? "Submitting..." : "Submit Inquiry"}
         </button>

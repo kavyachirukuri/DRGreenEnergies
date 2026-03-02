@@ -23,10 +23,10 @@ export default function BlogPage() {
   return (
     <div className="space-y-8">
       <section>
-        <h1 className="text-3xl font-semibold text-slate-900">
+        <h1 className="text-3xl font-semibold text-black">
           Blog & Resources
         </h1>
-        <p className="mt-3 max-w-3xl text-sm text-slate-600">
+        <p className="mt-3 max-w-3xl text-sm text-neutral-600">
           Short, practical resources to help you understand solar technology,
           regulations and financials so you can make confident decisions.
         </p>
@@ -36,20 +36,20 @@ export default function BlogPage() {
         {posts.map((post) => (
           <article
             key={post.title}
-            className="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-5"
+            className="flex flex-col justify-between rounded-2xl border border-neutral-200 bg-white p-5"
           >
             <div>
-              <p className="text-xs font-semibold uppercase tracking-wide text-amber-500">
+              <p className="text-xs font-semibold uppercase tracking-wide text-[#16a34a]">
                 {post.category}
               </p>
-              <h2 className="mt-1 text-sm font-semibold text-slate-900">
+              <h2 className="mt-1 text-sm font-semibold text-black">
                 {post.title}
               </h2>
-              <p className="mt-2 text-sm text-slate-600">
+              <p className="mt-2 text-sm text-neutral-600">
                 {post.description}
               </p>
             </div>
-            <p className="mt-4 text-xs font-semibold text-amber-500">
+            <p className="mt-4 text-xs font-semibold text-[#16a34a]">
               Coming soon
             </p>
           </article>

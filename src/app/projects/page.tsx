@@ -5,6 +5,12 @@ import { useState } from "react";
 
 type Segment = "All" | "Residential" | "Commercial" | "Industrial";
 
+// Capacity-specific images for 8 kW, 120 kW, 65 kW, 750 kW projects
+const IMG_8KW = "/8kw%20rooftop.png";
+const IMG_120KW = "/120kw%20rootop.webp";
+const IMG_65KW = "/65%20kW%20Rooftop%20solar.webp";
+const IMG_750KW = "/750k%20on%20grid%20mount.png";
+
 const projects = [
   {
     id: 1,
@@ -14,8 +20,8 @@ const projects = [
     duration: "3 weeks",
     testimonial:
       "Professional team and seamless execution. Our bills have dropped significantly.",
-    img: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&q=80",
-    alt: "Residential solar project",
+    img: IMG_8KW,
+    alt: "8 kW rooftop solar project",
   },
   {
     id: 2,
@@ -25,8 +31,8 @@ const projects = [
     duration: "6 weeks",
     testimonial:
       "Clear communication, on-time delivery and strong generation from day one.",
-    img: "https://images.unsplash.com/photo-1569163138763-92a2c9642a1a?w=600&q=80",
-    alt: "Commercial solar project",
+    img: IMG_120KW,
+    alt: "120 kW rooftop solar project",
   },
   {
     id: 3,
@@ -36,8 +42,8 @@ const projects = [
     duration: "10 weeks",
     testimonial:
       "End-to-end project management and strong safety culture on-site.",
-    img: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=600&q=80",
-    alt: "Industrial solar project",
+    img: IMG_750KW,
+    alt: "750 kW on-grid ground mount solar project",
   },
   {
     id: 4,
@@ -46,8 +52,8 @@ const projects = [
     location: "School Campus, City",
     duration: "5 weeks",
     testimonial: "",
-    img: "https://images.unsplash.com/photo-1559302504-64aae0ca2a3d?w=600&q=80",
-    alt: "School campus solar",
+    img: IMG_65KW,
+    alt: "65 kW rooftop solar – school campus",
   },
 ];
 
@@ -63,8 +69,8 @@ export default function ProjectsPage() {
 
   return (
     <div className="space-y-8">
-      <section className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-        <div className="relative aspect-[21/9] w-full min-h-[160px] bg-slate-100 md:min-h-0">
+      <section className="overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm">
+        <div className="relative aspect-[21/9] w-full min-h-[160px] bg-[#fef9c3]/50 md:min-h-0">
           <Image
             src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1200&q=80"
             alt="Solar projects portfolio"
@@ -75,8 +81,8 @@ export default function ProjectsPage() {
           />
         </div>
         <div className="p-5 md:p-6">
-          <h1 className="text-3xl font-semibold text-slate-900">Projects</h1>
-          <p className="mt-3 max-w-3xl text-sm text-slate-600">
+          <h1 className="text-3xl font-semibold text-black">Projects</h1>
+          <p className="mt-3 max-w-3xl text-sm text-neutral-600">
             A snapshot of residential, commercial and industrial solar projects
             executed by DR Green Energies. Each project is engineered for high
             performance, safety and long-term reliability.
@@ -92,8 +98,8 @@ export default function ProjectsPage() {
             onClick={() => setFilter(value)}
             className={`rounded-full px-4 py-2 text-xs font-semibold transition ${
               filter === value
-                ? "bg-amber-400 text-slate-900 shadow-sm"
-                : "bg-white text-slate-700 ring-1 ring-slate-200 hover:bg-slate-50"
+                ? "bg-[#16a34a] text-white shadow-sm"
+                : "bg-white text-neutral-700 ring-1 ring-neutral-200 hover:bg-neutral-50"
             }`}
           >
             {value}
@@ -105,9 +111,9 @@ export default function ProjectsPage() {
         {filtered.map((project) => (
           <article
             key={project.id}
-            className="flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm"
+            className="flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm"
           >
-            <div className="relative aspect-[16/10] w-full bg-slate-100">
+            <div className="relative aspect-[16/10] w-full bg-[#fef9c3]/50">
               <Image
                 src={project.img}
                 alt={project.alt}
@@ -118,22 +124,22 @@ export default function ProjectsPage() {
             </div>
             <div className="flex flex-1 flex-col justify-between p-5">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-wide text-amber-500">
+              <p className="text-xs font-semibold uppercase tracking-wide text-[#16a34a]">
                 {project.segment}
               </p>
-              <h2 className="mt-1 text-sm font-semibold text-slate-900">
+              <h2 className="mt-1 text-sm font-semibold text-black">
                 {project.size}
               </h2>
-              <p className="mt-1 text-xs text-slate-500">{project.location}</p>
+              <p className="mt-1 text-xs text-neutral-500">{project.location}</p>
             </div>
-            <dl className="mt-3 space-y-1 text-xs text-slate-600">
+            <dl className="mt-3 space-y-1 text-xs text-neutral-600">
               <div className="flex gap-1">
                 <dt className="font-semibold">Completion time:</dt>
                 <dd>{project.duration}</dd>
               </div>
             </dl>
             {project.testimonial && (
-              <p className="mt-3 text-sm text-slate-600">
+              <p className="mt-3 text-sm text-neutral-600">
                 “{project.testimonial}”
               </p>
             )}

@@ -11,7 +11,7 @@ export function WhatsAppFloat() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
-      className="wa-float-btn fixed bottom-4 right-4 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2 focus:ring-offset-slate-50 animate-wa-float-in-then-pulse sm:bottom-6 sm:right-6 sm:h-14 sm:w-14"
+      className="wa-float-btn fixed bottom-4 right-4 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2 focus:ring-offset-[#fffbeb] animate-wa-float-in-then-pulse sm:bottom-6 sm:right-6 sm:h-14 sm:w-14"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

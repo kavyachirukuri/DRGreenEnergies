@@ -8,7 +8,7 @@ export function CallFloat() {
     <Link
       href={telUrl}
       aria-label={`Call ${COMPANY.name}`}
-      className="fixed bottom-4 right-20 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-slate-800 text-white shadow-lg transition-all duration-300 hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2 focus:ring-offset-slate-50 sm:bottom-6 sm:right-24 sm:h-14 sm:w-14"
+      className="fixed bottom-4 right-20 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-black text-white shadow-lg transition-all duration-300 hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-[#fffbeb] sm:bottom-6 sm:right-24 sm:h-14 sm:w-14"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

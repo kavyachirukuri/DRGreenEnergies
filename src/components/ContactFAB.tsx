@@ -53,7 +53,7 @@ export default function ContactFAB() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Chat on WhatsApp"
-          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2 focus:ring-offset-slate-50"
+          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2 focus:ring-offset-[#fffbeb]"
           style={{ transitionDelay: open ? "0ms" : "50ms" }}
           onClick={() => setOpen(false)}
         >
@@ -70,7 +70,7 @@ export default function ContactFAB() {
         <Link
           href={telUrl}
           aria-label="Call Now"
-          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-slate-800 text-white shadow-lg transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-slate-600 focus:ring-offset-2 focus:ring-offset-slate-50"
+          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-black text-white shadow-lg transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-neutral-600 focus:ring-offset-2 focus:ring-offset-[#fffbeb]"
           style={{ transitionDelay: open ? "50ms" : "0ms" }}
           onClick={() => setOpen(false)}
         >
@@ -78,13 +78,13 @@ export default function ContactFAB() {
         </Link>
       </div>
 
-      {/* Main FAB */}
+      {/* Main FAB – call button with glow, pulse, shimmer */}
       <button
         type="button"
         onClick={() => setOpen((prev) => !prev)}
         aria-label={open ? "Close contact menu" : "Contact Us"}
         aria-expanded={open}
-        className="relative z-[61] flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#f59e0b] text-white shadow-[0_4px_14px_0_rgba(245,158,11,0.39)] transition-all duration-300 ease-out hover:scale-105 active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2 focus:ring-offset-slate-50"
+        className="fab-cta relative z-[61] flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#f97316] text-white shadow-[0_4px_14px_0_rgba(249,115,22,0.4)] focus:outline-none focus:ring-2 focus:ring-[#f97316] focus:ring-offset-2 focus:ring-offset-[#fffbeb]"
       >
         <Phone
           className={`h-6 w-6 transition-transform duration-300 ease-out ${

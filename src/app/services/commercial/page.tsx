@@ -19,10 +19,10 @@ export default function CommercialServicePage() {
   return (
     <div className="space-y-10">
       <section>
-        <h1 className="text-3xl font-semibold text-slate-900">
+        <h1 className="text-3xl font-semibold text-black">
           Commercial Solar EPC
         </h1>
-        <p className="mt-3 max-w-3xl text-sm text-slate-600">
+        <p className="mt-3 max-w-3xl text-sm text-neutral-600">
           Lower operating costs and make your business more sustainable with
           rooftop and carport solar solutions built for offices, schools,
           hospitals and warehouses.
@@ -30,20 +30,20 @@ export default function CommercialServicePage() {
       </section>
 
       <section className="grid gap-6 md:grid-cols-[2fr,1.5fr]">
-        <div className="space-y-4 rounded-2xl border border-slate-200 bg-white p-5">
-          <h2 className="text-sm font-semibold text-slate-900">Key benefits</h2>
-          <ul className="list-disc space-y-2 pl-5 text-sm text-slate-600">
+        <div className="space-y-4 rounded-2xl border border-neutral-200 bg-white p-5">
+          <h2 className="text-sm font-semibold text-black">Key benefits</h2>
+          <ul className="list-disc space-y-2 pl-5 text-sm text-neutral-600">
             <li>Significant reduction in energy expenses and demand charges</li>
             <li>Improved ESG scores and sustainability credentials</li>
             <li>Attractive payback with tax and depreciation benefits</li>
             <li>Shadow-free designs tailored to your roof and load profile</li>
           </ul>
         </div>
-        <div className="space-y-4 rounded-2xl border border-slate-200 bg-white p-5">
-          <h2 className="text-sm font-semibold text-slate-900">
+        <div className="space-y-4 rounded-2xl border border-neutral-200 bg-white p-5">
+          <h2 className="text-sm font-semibold text-black">
             Estimated savings & ROI
           </h2>
-          <p className="text-sm text-slate-600">
+          <p className="text-sm text-neutral-600">
             Commercial plants typically see 3–4 year payback periods depending
             on tariffs and usage patterns. Our proposals clearly outline cash
             flows, IRR and payback so you can evaluate the project easily.
@@ -52,21 +52,21 @@ export default function CommercialServicePage() {
       </section>
 
       <section className="grid gap-6 md:grid-cols-2">
-        <div className="rounded-2xl border border-slate-200 bg-white p-5">
-          <h2 className="text-sm font-semibold text-slate-900">
+        <div className="rounded-2xl border border-neutral-200 bg-white p-5">
+          <h2 className="text-sm font-semibold text-black">
             System components
           </h2>
-          <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-slate-600">
+          <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-neutral-600">
             {components.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
         </div>
-        <div className="rounded-2xl border border-slate-200 bg-white p-5">
-          <h2 className="text-sm font-semibold text-slate-900">
+        <div className="rounded-2xl border border-neutral-200 bg-white p-5">
+          <h2 className="text-sm font-semibold text-black">
             Installation process
           </h2>
-          <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm text-slate-600">
+          <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm text-neutral-600">
             <li>Baseline energy study and feasibility</li>
             <li>
               Detailed engineering, structural checks and statutory approvals
@@ -78,32 +78,32 @@ export default function CommercialServicePage() {
         </div>
       </section>
 
-      <section className="space-y-4 rounded-2xl border border-slate-200 bg-white p-5">
-        <h2 className="text-sm font-semibold text-slate-900">FAQs</h2>
+      <section className="space-y-4 rounded-2xl border border-neutral-200 bg-white p-5">
+        <h2 className="text-sm font-semibold text-black">FAQs</h2>
         <div className="space-y-4">
           {faqs.map((item) => (
             <div key={item.q}>
-              <p className="text-sm font-semibold text-slate-900">{item.q}</p>
-              <p className="mt-1 text-sm text-slate-600">{item.a}</p>
+              <p className="text-sm font-semibold text-black">{item.q}</p>
+              <p className="mt-1 text-sm text-neutral-600">{item.a}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="rounded-2xl bg-slate-900 px-6 py-7 text-slate-50">
+      <section className="rounded-2xl bg-black px-6 py-7 text-white">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
             <h2 className="text-lg font-semibold">
               Discuss solar for your business
             </h2>
-            <p className="mt-1 text-sm text-slate-200">
+            <p className="mt-1 text-sm text-neutral-200">
               Share your tariff details and consumption profile. Our team will
               help you build a business case for commercial solar.
             </p>
           </div>
           <a
             href="/contact"
-            className="inline-flex items-center justify-center rounded-full bg-amber-400 px-6 py-3 text-sm font-semibold text-slate-900 shadow-sm transition hover:bg-amber-300"
+            className="inline-flex items-center justify-center rounded-full bg-[#16a34a] px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#15803d]"
           >
             Request Commercial Proposal
           </a>

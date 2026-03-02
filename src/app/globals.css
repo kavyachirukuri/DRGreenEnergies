@@ -1,16 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f8fafc; /* light grey */
-  --foreground: #0f172a; /* deep blue */
-  --brand-solar-yellow: #fbbf24;
-  --brand-deep-blue: #0f172a;
-  --brand-light-grey: #e5e7eb;
+  /* Theme: green, sunset orange, white, light yellow, black */
+  --background: #fffbeb; /* light yellow */
+  --foreground: #0a0a0a; /* black */
+  --brand-green: #16a34a;
+  --brand-green-hover: #15803d;
+  --brand-sunset: #f97316; /* light orange / sunset */
+  --brand-sunset-hover: #ea580c;
+  --brand-white: #ffffff;
+  --brand-light-yellow: #fef9c3;
+  --brand-black: #0a0a0a;
+  --muted: #404040;
+  --muted-light: #737373;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-brand-green: var(--brand-green);
+  --color-brand-sunset: var(--brand-sunset);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -127,6 +136,187 @@ body {
 .animation-delay-200 { animation-delay: 200ms; }
 .animation-delay-300 { animation-delay: 300ms; }
 
+/* Hero CTA – glow, pulse, shimmer + ring (green) */
+@keyframes cta-glow {
+  0%,
+  100% {
+    box-shadow: 0 10px 25px -5px rgb(22 163 74 / 0.4), 0 4px 6px -4px rgb(22 163 74 / 0.3),
+      0 0 0 0 rgb(22 163 74 / 0.25);
+  }
+  50% {
+    box-shadow: 0 14px 30px -5px rgb(22 163 74 / 0.5), 0 6px 10px -4px rgb(22 163 74 / 0.35),
+      0 0 0 6px rgb(22 163 74 / 0);
+  }
+}
+
+@keyframes cta-soft-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+}
+
+@keyframes cta-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.hero-cta {
+  position: relative;
+  overflow: hidden;
+  animation: cta-glow 2.5s ease-in-out infinite,
+    cta-soft-pulse 2.8s ease-in-out infinite;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.3s ease,
+    background-color 0.2s ease;
+}
+/* Shimmer overlay */
+.hero-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    transparent 40%,
+    rgba(255 255 255 / 0.4) 50%,
+    transparent 60%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: cta-shimmer 3s ease-in-out infinite;
+  pointer-events: none;
+  border-radius: inherit;
+}
+.hero-cta:hover {
+  animation: none;
+  transform: scale(1.08);
+  box-shadow: 0 20px 35px -8px rgb(22 163 74 / 0.5), 0 8px 15px -6px rgb(22 163 74 / 0.4);
+}
+.hero-cta:hover::before {
+  animation: none;
+}
+.hero-cta:active {
+  transform: scale(1.02);
+  transition-duration: 0.1s;
+}
+
+/* Secondary CTA (e.g. Get My Solar Proposal) – scale + glow on hover */
+.cta-secondary {
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.3s ease,
+    background-color 0.2s ease;
+}
+.cta-secondary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 28px -6px rgb(22 163 74 / 0.45);
+}
+.cta-secondary:active {
+  transform: scale(1.02);
+}
+
+/* Header/nav CTA – subtle lift */
+.cta-nav {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.15s ease;
+}
+.cta-nav:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -4px rgb(22 163 74 / 0.35);
+}
+
+/* Card hover – lift + shadow for service/process/project cards */
+.card-hover {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.3s ease,
+    border-color 0.2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.08), 0 8px 10px -6px rgb(0 0 0 / 0.05);
+}
+
+/* Hero badge – gentle float */
+@keyframes badge-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+.badge-float {
+  animation: badge-float 4s ease-in-out infinite;
+}
+
+/* Section link hover (View all →, Learn more →) */
+.link-arrow {
+  transition: transform 0.2s ease, color 0.2s ease;
+  display: inline-block;
+}
+.link-arrow:hover {
+  transform: translateX(4px);
+}
+
+/* FAB uses sunset-orange glow */
+@keyframes cta-glow-sunset {
+  0%, 100% {
+    box-shadow: 0 10px 25px -5px rgb(249 115 22 / 0.4), 0 4px 6px -4px rgb(249 115 22 / 0.3),
+      0 0 0 0 rgb(249 115 22 / 0.25);
+  }
+  50% {
+    box-shadow: 0 14px 30px -5px rgb(249 115 22 / 0.5), 0 6px 10px -4px rgb(249 115 22 / 0.35),
+      0 0 0 6px rgb(249 115 22 / 0);
+  }
+}
+
+/* Floating call button (FAB) – sunset glow, pulse, shimmer */
+.fab-cta {
+  position: relative;
+  overflow: hidden;
+  animation: cta-glow-sunset 2.5s ease-in-out infinite,
+    cta-soft-pulse 2.8s ease-in-out infinite;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.3s ease;
+}
+.fab-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    transparent 40%,
+    rgba(255 255 255 / 0.35) 50%,
+    transparent 60%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: cta-shimmer 3s ease-in-out infinite;
+  pointer-events: none;
+  border-radius: inherit;
+}
+.fab-cta:hover {
+  animation: none;
+  transform: scale(1.1);
+  box-shadow: 0 20px 35px -8px rgb(249 115 22 / 0.5), 0 8px 15px -6px rgb(249 115 22 / 0.4);
+}
+.fab-cta:hover::before {
+  animation: none;
+}
+.fab-cta:active {
+  transform: scale(0.98);
+}
+/* When FAB menu is open, stop the idle animation */
+.fab-cta[aria-expanded="true"] {
+  animation: none;
+}
+.fab-cta[aria-expanded="true"]::before {
+  animation: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-fade-in,
   .animate-slide-up,
@@ -142,6 +332,39 @@ body {
     transform: scale(1);
   }
   .wa-float-btn:hover svg {
+    transform: none;
+  }
+  .hero-cta {
+    animation: none;
+  }
+  .hero-cta::before {
+    animation: none;
+    display: none;
+  }
+  .hero-cta:hover {
+    transform: none;
+  }
+  .cta-secondary:hover,
+  .cta-nav:hover {
+    transform: none;
+  }
+  .card-hover:hover {
+    transform: none;
+  }
+  .badge-float {
+    animation: none;
+  }
+  .link-arrow:hover {
+    transform: none;
+  }
+  .fab-cta {
+    animation: none;
+  }
+  .fab-cta::before {
+    animation: none;
+    display: none;
+  }
+  .fab-cta:hover {
     transform: none;
   }
 }

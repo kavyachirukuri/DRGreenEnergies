@@ -40,8 +40,8 @@ export default function ProcessPage() {
   return (
     <div className="space-y-8">
       <section>
-        <h1 className="text-3xl font-semibold text-slate-900">Our Process</h1>
-        <p className="mt-3 max-w-3xl text-sm text-slate-600">
+        <h1 className="text-3xl font-semibold text-black">Our Process</h1>
+        <p className="mt-3 max-w-3xl text-sm text-neutral-600">
           A structured, transparent process ensures your solar project is
           delivered safely, on time and with predictable performance. From first
           consultation to long-term monitoring, every stage is handled by
@@ -53,15 +53,15 @@ export default function ProcessPage() {
         {steps.map((step, index) => (
           <article
             key={step.title}
-            className="flex flex-col rounded-2xl border border-slate-200 bg-white p-5"
+            className="flex flex-col rounded-2xl border border-neutral-200 bg-white p-5"
           >
-            <span className="mb-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-amber-400 text-xs font-semibold text-slate-900">
+            <span className="mb-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#16a34a] text-xs font-semibold text-white">
               {index + 1}
             </span>
-            <h2 className="text-sm font-semibold text-slate-900">
+            <h2 className="text-sm font-semibold text-black">
               {step.title}
             </h2>
-            <p className="mt-2 text-sm text-slate-600">{step.description}</p>
+            <p className="mt-2 text-sm text-neutral-600">{step.description}</p>
           </article>
         ))}
       </section>
