@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 type Segment = "All" | "Residential" | "Commercial" | "Industrial";
@@ -13,6 +14,8 @@ const projects = [
     duration: "3 weeks",
     testimonial:
       "Professional team and seamless execution. Our bills have dropped significantly.",
+    img: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&q=80",
+    alt: "Residential solar project",
   },
   {
     id: 2,
@@ -22,6 +25,8 @@ const projects = [
     duration: "6 weeks",
     testimonial:
       "Clear communication, on-time delivery and strong generation from day one.",
+    img: "https://images.unsplash.com/photo-1569163138763-92a2c9642a1a?w=600&q=80",
+    alt: "Commercial solar project",
   },
   {
     id: 3,
@@ -31,6 +36,8 @@ const projects = [
     duration: "10 weeks",
     testimonial:
       "End-to-end project management and strong safety culture on-site.",
+    img: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=600&q=80",
+    alt: "Industrial solar project",
   },
   {
     id: 4,
@@ -39,6 +46,8 @@ const projects = [
     location: "School Campus, City",
     duration: "5 weeks",
     testimonial: "",
+    img: "https://images.unsplash.com/photo-1559302504-64aae0ca2a3d?w=600&q=80",
+    alt: "School campus solar",
   },
 ];
 
@@ -54,13 +63,25 @@ export default function ProjectsPage() {
 
   return (
     <div className="space-y-8">
-      <section>
-        <h1 className="text-3xl font-semibold text-slate-900">Projects</h1>
-        <p className="mt-3 max-w-3xl text-sm text-slate-600">
-          A snapshot of residential, commercial and industrial solar projects
-          executed by DR Green Energies. Each project is engineered for high
-          performance, safety and long-term reliability.
-        </p>
+      <section className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+        <div className="relative aspect-[21/9] w-full min-h-[160px] bg-slate-100 md:min-h-0">
+          <Image
+            src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1200&q=80"
+            alt="Solar projects portfolio"
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority
+          />
+        </div>
+        <div className="p-5 md:p-6">
+          <h1 className="text-3xl font-semibold text-slate-900">Projects</h1>
+          <p className="mt-3 max-w-3xl text-sm text-slate-600">
+            A snapshot of residential, commercial and industrial solar projects
+            executed by DR Green Energies. Each project is engineered for high
+            performance, safety and long-term reliability.
+          </p>
+        </div>
       </section>
 
       <section className="flex flex-wrap gap-3">
@@ -84,8 +105,18 @@ export default function ProjectsPage() {
         {filtered.map((project) => (
           <article
             key={project.id}
-            className="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
+            className="flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm"
           >
+            <div className="relative aspect-[16/10] w-full bg-slate-100">
+              <Image
+                src={project.img}
+                alt={project.alt}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
+            <div className="flex flex-1 flex-col justify-between p-5">
             <div>
               <p className="text-xs font-semibold uppercase tracking-wide text-amber-500">
                 {project.segment}
@@ -106,6 +137,7 @@ export default function ProjectsPage() {
                 “{project.testimonial}”
               </p>
             )}
+            </div>
           </article>
         ))}
       </section>

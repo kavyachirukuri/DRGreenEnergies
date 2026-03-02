@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ContactForm } from "@/components/contact-form";
 import { COMPANY, addressSingleLine } from "@/lib/company";
 
@@ -11,9 +12,21 @@ export default function ContactPage() {
 
   return (
     <div className="space-y-10">
-      <section className="grid gap-8 md:grid-cols-[3fr,2fr] md:items-start">
-        <div>
-          <h1 className="text-3xl font-semibold text-slate-900">Contact Us</h1>
+      <section className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+        <div className="relative aspect-[21/9] w-full min-h-[140px] bg-slate-100 md:min-h-0">
+          <Image
+            src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1200&q=80"
+            alt="Get in touch for solar solutions"
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority
+          />
+        </div>
+      </section>
+      <section className="grid gap-6 md:grid-cols-[3fr,2fr] md:gap-8 md:items-start">
+        <div className="min-w-0">
+          <h1 className="text-2xl font-semibold text-slate-900 sm:text-3xl">Contact Us</h1>
           <p className="mt-3 max-w-xl text-sm text-slate-600">
             Share a few details about your property and current electricity
             bills. Our team will prepare a customized savings and ROI estimate
@@ -64,8 +77,8 @@ export default function ContactPage() {
             </p>
           </div>
         </div>
-        <div className="rounded-2xl border border-slate-200 bg-white p-4">
-          <div className="aspect-[4/3] w-full overflow-hidden rounded-xl bg-slate-100">
+        <div className="min-w-0 rounded-2xl border border-slate-200 bg-white p-3 sm:p-4">
+          <div className="aspect-[4/3] min-h-[200px] w-full overflow-hidden rounded-xl bg-slate-100">
             <iframe
               title={`${COMPANY.name} location`}
               src={mapEmbedUrl}

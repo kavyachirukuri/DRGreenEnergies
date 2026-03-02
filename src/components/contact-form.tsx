@@ -84,7 +84,7 @@ export function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
+      className="space-y-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5"
     >
       <div className="grid gap-4 md:grid-cols-2">
         <div className="space-y-1">
@@ -100,7 +100,7 @@ export function ContactForm() {
             required
             value={form.name}
             onChange={handleChange}
-            className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 outline-none ring-amber-400/0 transition focus:bg-white focus:ring-2"
+            className="min-h-[44px] w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2.5 text-base text-slate-900 outline-none ring-amber-400/0 transition focus:bg-white focus:ring-2 sm:py-2 sm:text-sm"
           />
         </div>
         <div className="space-y-1">
@@ -117,7 +117,7 @@ export function ContactForm() {
             required
             value={form.phone}
             onChange={handleChange}
-            className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 outline-none ring-amber-400/0 transition focus:bg-white focus:ring-2"
+            className="min-h-[44px] w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2.5 text-base text-slate-900 outline-none ring-amber-400/0 transition focus:bg-white focus:ring-2 sm:py-2 sm:text-sm"
           />
         </div>
       </div>
@@ -137,7 +137,7 @@ export function ContactForm() {
             required
             value={form.email}
             onChange={handleChange}
-            className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 outline-none ring-amber-400/0 transition focus:bg-white focus:ring-2"
+            className="min-h-[44px] w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2.5 text-base text-slate-900 outline-none ring-amber-400/0 transition focus:bg-white focus:ring-2 sm:py-2 sm:text-sm"
           />
         </div>
         <div className="space-y-1">
@@ -153,7 +153,7 @@ export function ContactForm() {
             required
             value={form.propertyType}
             onChange={handleChange}
-            className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 outline-none ring-amber-400/0 transition focus:bg-white focus:ring-2"
+            className="min-h-[44px] w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2.5 text-base text-slate-900 outline-none ring-amber-400/0 transition focus:bg-white focus:ring-2 sm:py-2 sm:text-sm"
           >
             <option value="">Select</option>
             <option value="Residential">Residential</option>
@@ -178,7 +178,7 @@ export function ContactForm() {
             required
             value={form.monthlyBill}
             onChange={handleChange}
-            className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 outline-none ring-amber-400/0 transition focus:bg-white focus:ring-2"
+            className="min-h-[44px] w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2.5 text-base text-slate-900 outline-none ring-amber-400/0 transition focus:bg-white focus:ring-2 sm:py-2 sm:text-sm"
           />
         </div>
         <div className="space-y-1">
@@ -194,7 +194,7 @@ export function ContactForm() {
             required
             value={form.location}
             onChange={handleChange}
-            className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 outline-none ring-amber-400/0 transition focus:bg-white focus:ring-2"
+            className="min-h-[44px] w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2.5 text-base text-slate-900 outline-none ring-amber-400/0 transition focus:bg-white focus:ring-2 sm:py-2 sm:text-sm"
           />
         </div>
       </div>
@@ -212,7 +212,7 @@ export function ContactForm() {
           rows={3}
           value={form.message}
           onChange={handleChange}
-          className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 outline-none ring-amber-400/0 transition focus:bg-white focus:ring-2"
+          className="min-h-[44px] w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2.5 text-base text-slate-900 outline-none ring-amber-400/0 transition focus:bg-white focus:ring-2 sm:py-2 sm:text-sm"
         />
       </div>
 
@@ -220,7 +220,7 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={submitting}
-          className="inline-flex items-center justify-center rounded-full bg-amber-400 px-6 py-2.5 text-sm font-semibold text-slate-900 shadow-sm transition hover:bg-amber-300 disabled:opacity-70"
+          className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-amber-400 px-6 py-3 text-sm font-semibold text-slate-900 shadow-sm transition hover:bg-amber-300 active:bg-amber-500 disabled:opacity-70"
         >
           {submitting ? "Submitting..." : "Submit Inquiry"}
         </button>
