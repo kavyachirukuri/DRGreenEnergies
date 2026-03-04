@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { MobileNav } from "@/components/mobile-nav";
 
 const navLinks = [
@@ -17,8 +18,18 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-neutral-200 bg-white shadow-sm md:bg-white/90 md:backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 pb-3 pt-[max(0.75rem,env(safe-area-inset-top))] md:px-6 md:pt-3">
         <Link href="/" className="min-w-0 shrink-0">
-          <span className="truncate text-base font-semibold text-black sm:text-lg">
-            DR Green Energies
+          <span className="flex items-center gap-2">
+            <Image
+              src="/drgreenLogo.png"
+              alt="DR Green Energies logo"
+              width={32}
+              height={32}
+              className="h-8 w-auto"
+              priority
+            />
+            {/* <span className="truncate text-base font-semibold text-black sm:text-lg">
+              DR Green Energies
+            </span> */}
           </span>
         </Link>
         <nav className="hidden gap-4 text-sm font-medium text-neutral-700 md:flex lg:gap-6">
@@ -45,4 +56,3 @@ export function SiteHeader() {
     </header>
   );
 }
-
