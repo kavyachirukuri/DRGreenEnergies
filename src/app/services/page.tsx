@@ -7,6 +7,20 @@ const IMG_COMMERCIAL = "/commercial%20solar.webp";
 const IMG_INDUSTRIAL = "/industrial%20solar.webp";
 const IMG_OPS_MAINTENANCE = "/operations%20and%20maintainance.jpg";
 
+// Images for specialised solar solutions
+// Use a local street / garden lighting visual only for street & garden services
+const IMG_STREET_GARDEN = "/street1.jpeg";
+// Use a local pergola visual only for pergola services
+const IMG_SOLAR_PERGOLA = "/perigola1.png";
+// Use one of the local carport visuals specifically for the carport card
+const IMG_SOLAR_CARPORT = "/carport3.jpeg";
+// Use a local water pump visual only for solar water pump services
+const IMG_SOLAR_WATER_PUMP = "/waterPump1.png";
+// Use a local solar tree visual only for solar tree services
+const IMG_SOLAR_TREE = "/solarTree1.png";
+// Use a local watch tower visual only for watch tower services
+const IMG_WATCH_TOWERS = "/watchTower1.png";
+
 const services = [
   {
     title: "Residential Solar",
@@ -31,6 +45,54 @@ const services = [
       "High-capacity, high-uptime systems for factories and heavy energy users.",
     img: IMG_INDUSTRIAL,
     alt: "Industrial solar",
+  },
+  {
+    title: "Street & Garden Solar Lights",
+    href: "/services/street-garden-lights",
+    summary:
+      "Standalone solar-powered poles and garden lights that improve safety, ambience and security without trenching or cabling.",
+    img: IMG_STREET_GARDEN,
+    alt: "Solar-powered street and garden lighting",
+  },
+  {
+    title: "Solar Pergola Structures",
+    href: "/services/solar-pergola",
+    summary:
+      "Architectural pergolas that double as shaded outdoor spaces and fully functional solar power plants.",
+    img: IMG_SOLAR_PERGOLA,
+    alt: "Outdoor solar pergola structure",
+  },
+  {
+    title: "Solar Carports",
+    href: "/services/solar-carport",
+    summary:
+      "Covered parking structures with integrated solar modules that generate power while protecting vehicles from heat and weather.",
+    img: IMG_SOLAR_CARPORT,
+    alt: "Solar carport structure with parked cars",
+  },
+  {
+    title: "Solar Water Pumps & Overhead Tanks",
+    href: "/services/solar-water-pump-overhead-tank",
+    summary:
+      "Solar-powered pumping systems that lift water to overhead tanks for reliable, grid-free supply in homes, farms and institutions.",
+    img: IMG_SOLAR_WATER_PUMP,
+    alt: "Solar water pump feeding an overhead tank",
+  },
+  {
+    title: "Solar Trees",
+    href: "/services/solar-tree",
+    summary:
+      "Space-efficient solar tree structures that combine striking aesthetics with high energy generation in tight or urban spaces.",
+    img: IMG_SOLAR_TREE,
+    alt: "Decorative solar tree installation",
+  },
+  {
+    title: "Solar-Powered Watch Towers",
+    href: "/services/solar-watch-towers",
+    summary:
+      "Autonomous watch towers with solar-powered lighting and surveillance for remote sites, campuses and critical infrastructure.",
+    img: IMG_WATCH_TOWERS,
+    alt: "Solar-powered security and watch tower",
   },
   {
     title: "Operations & Maintenance",

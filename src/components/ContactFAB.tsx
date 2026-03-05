@@ -6,7 +6,8 @@ import { Phone } from "lucide-react";
 import { COMPANY } from "@/lib/company";
 
 const telUrl = `tel:${COMPANY.phone.replace(/\s/g, "")}`;
-const whatsappUrl = `https://wa.me/${COMPANY.whatsapp}?text=${encodeURIComponent(
+const whatsappNumber = (COMPANY.whatsapp || COMPANY.phone).replace(/\D/g, "");
+const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
   "Hi, I would like to explore solar for my property."
 )}`;
 
@@ -40,21 +41,30 @@ export default function ContactFAB() {
         />
       )}
 
-      {/* Expanded actions: WhatsApp only */}
+      {/* Expanded actions: Call + WhatsApp */}
       <div
-        className={`relative z-[61] flex flex-col-reverse items-center gap-3 transition-all duration-300 ease-out ${
+        className={`relative z-[61] flex flex-col items-center gap-3 transition-all duration-300 ease-out ${
           open
             ? "pointer-events-auto translate-y-0 opacity-100"
             : "pointer-events-none translate-y-4 opacity-0"
         }`}
       >
         <Link
+          href={telUrl}
+          aria-label="Call Now"
+          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#16a34a] text-white shadow-lg transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#15803d] focus:ring-offset-2 focus:ring-offset-[#fffbeb]"
+          style={{ transitionDelay: open ? "0ms" : "50ms" }}
+          onClick={() => setOpen(false)}
+        >
+          <Phone className="h-5 w-5" strokeWidth={2} aria-hidden />
+        </Link>
+        <Link
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Chat on WhatsApp"
           className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2 focus:ring-offset-[#fffbeb]"
-          style={{ transitionDelay: open ? "0ms" : "50ms" }}
+          style={{ transitionDelay: open ? "50ms" : "0ms" }}
           onClick={() => setOpen(false)}
         >
           <svg
@@ -75,7 +85,7 @@ export default function ContactFAB() {
         onClick={() => setOpen((prev) => !prev)}
         aria-label={open ? "Close contact menu" : "Contact Us"}
         aria-expanded={open}
-        className="fab-cta relative z-[61] flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#f97316] text-white shadow-[0_4px_14px_0_rgba(249,115,22,0.4)] focus:outline-none focus:ring-2 focus:ring-[#f97316] focus:ring-offset-2 focus:ring-offset-[#fffbeb]"
+        className="fab-cta relative z-[61] flex h-14 w-14 shrink-0 items-center justify-center rounded-full border-2 border-white bg-[#16a34a] text-white shadow-[0_4px_14px_0_rgba(22,163,74,0.45)] focus:outline-none focus:ring-2 focus:ring-[#16a34a] focus:ring-offset-2 focus:ring-offset-[#fffbeb]"
       >
         <Phone
           className={`h-6 w-6 transition-transform duration-300 ease-out ${

@@ -13,6 +13,22 @@ const navLinks = [
   { href: "/contact", label: "Contact Us" },
 ];
 
+const serviceLinks = [
+  { href: "/services/residential", label: "Residential Solar" },
+  { href: "/services/commercial", label: "Commercial Solar" },
+  { href: "/services/industrial", label: "Industrial Solar" },
+  { href: "/services/maintenance", label: "Operations & Maintenance" },
+  { href: "/services/street-garden-lights", label: "Street & Garden Solar Lights" },
+  { href: "/services/solar-pergola", label: "Solar Pergola Structures" },
+  { href: "/services/solar-carport", label: "Solar Carports" },
+  {
+    href: "/services/solar-water-pump-overhead-tank",
+    label: "Solar Water Pumps & Overhead Tanks",
+  },
+  { href: "/services/solar-tree", label: "Solar Trees" },
+  { href: "/services/solar-watch-towers", label: "Solar-Powered Watch Towers" },
+];
+
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-neutral-200 bg-white shadow-sm md:bg-white/90 md:backdrop-blur">
@@ -33,15 +49,64 @@ export function SiteHeader() {
           </span>
         </Link>
         <nav className="hidden gap-4 text-sm font-medium text-neutral-700 md:flex lg:gap-6">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="whitespace-nowrap transition-colors duration-200 hover:text-[#16a34a]"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            if (link.href === "/services") {
+              return (
+                <div key={link.href} className="relative group">
+                  <button
+                    type="button"
+                    className="flex items-center gap-1 whitespace-nowrap transition-colors duration-200 hover:text-[#16a34a]"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    {link.label}
+                    <svg
+                      className="h-3 w-3 text-current"
+                      viewBox="0 0 12 12"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M2 4.5L6 8.5L10 4.5"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </button>
+                  <div className="pointer-events-none absolute left-0 top-full z-40 mt-2 min-w-[220px] rounded-xl border border-neutral-200 bg-white py-1 text-sm shadow-lg opacity-0 transition duration-150 group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:opacity-100">
+                    <Link
+                      href="/services"
+                      className="block px-4 py-2 font-semibold text-neutral-800 hover:bg-green-50 hover:text-[#16a34a]"
+                    >
+                      All Services
+                    </Link>
+                    <div className="my-1 border-t border-neutral-100" />
+                    {serviceLinks.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className="block px-4 py-1.5 text-neutral-700 hover:bg-green-50 hover:text-[#16a34a]"
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              );
+            }
+
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="whitespace-nowrap transition-colors duration-200 hover:text-[#16a34a]"
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </nav>
         <div className="flex items-center gap-2">
           <Link

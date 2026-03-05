@@ -2,7 +2,8 @@ import Link from "next/link";
 import { COMPANY } from "@/lib/company";
 
 const defaultMessage = "Hi, I would like to explore solar for my property.";
-const whatsappUrl = `https://wa.me/${COMPANY.whatsapp}?text=${encodeURIComponent(defaultMessage)}`;
+const whatsappNumber = (COMPANY.whatsapp || COMPANY.phone).replace(/\D/g, "");
+const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(defaultMessage)}`;
 
 export function WhatsAppFloat() {
   return (
