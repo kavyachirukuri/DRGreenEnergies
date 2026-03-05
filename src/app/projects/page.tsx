@@ -6,10 +6,10 @@ import { useState } from "react";
 type Segment = "All" | "Residential" | "Commercial" | "Industrial";
 
 // Capacity-specific images for 8 kW, 120 kW, 65 kW, 750 kW projects
-const IMG_8KW = "/8kw%20rooftop.png";
-const IMG_120KW = "/120kw%20rootop.webp";
-const IMG_65KW = "/65%20kW%20Rooftop%20solar.webp";
-const IMG_750KW = "/750k%20on%20grid%20mount.png";
+const IMG_8KW = "/residentail solar.webp";
+const IMG_120KW = "/120kw rootop.webp";
+const IMG_65KW = "/65 kW Rooftop solar.webp";
+const IMG_750KW = "/industrial solar.webp";
 
 const projects = [
   {

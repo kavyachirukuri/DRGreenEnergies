@@ -28,7 +28,7 @@ const serviceLinks = [
     label: "Solar Water Pumps & Overhead Tanks",
   },
   { href: "/services/solar-tree", label: "Solar Trees" },
-  { href: "/services/solar-watch-towers", label: "Solar-Powered Watch Towers" },
+  { href: "/services/solar-watch-towers", label: "Watch Towers" },
 ];
 
 export function MobileNav() {

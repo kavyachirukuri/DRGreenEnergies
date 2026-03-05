@@ -1,14 +1,14 @@
 import Image from "next/image";
 
 // Local images from public folder – segment images (Residential, Commercial, Industrial)
-const IMG_RESIDENTIAL = "/residentail%20solar.webp";
-const IMG_COMMERCIAL = "/commercial%20solar.webp";
-const IMG_INDUSTRIAL = "/industrial%20solar.webp";
+const IMG_RESIDENTIAL = "/residentail solar.webp";
+const IMG_COMMERCIAL = "/commercial solar.webp";
+const IMG_INDUSTRIAL = "/industrial solar.webp";
 
 // Capacity-specific (for reference; used where segment image not needed)
-const IMG_8KW_ROOFTOP = "/8kw%20rooftop.png";
-const IMG_120KW_ROOFTOP = "/120kw%20rootop.webp";
-const IMG_750KW_GRID = "/750k%20on%20grid%20mount.png";
+const IMG_8KW_ROOFTOP = IMG_RESIDENTIAL;
+const IMG_120KW_ROOFTOP = "/120kw rootop.webp";
+const IMG_750KW_GRID = IMG_INDUSTRIAL;
 
 // Hero + Why Choose Us still use Unsplash (no matching local assets)
 const HERO_IMAGE =

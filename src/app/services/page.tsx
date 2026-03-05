@@ -2,10 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 // Local images from public folder – segment + O&M
-const IMG_RESIDENTIAL = "/residentail%20solar.webp";
-const IMG_COMMERCIAL = "/commercial%20solar.webp";
-const IMG_INDUSTRIAL = "/industrial%20solar.webp";
-const IMG_OPS_MAINTENANCE = "/operations%20and%20maintainance.jpg";
+const IMG_RESIDENTIAL = "/residentail solar.webp";
+const IMG_COMMERCIAL = "/commercial solar.webp";
+const IMG_INDUSTRIAL = "/industrial solar.webp";
+const IMG_OPS_MAINTENANCE = "/operations and maintainance.jpg";
 
 // Images for specialised solar solutions
 // Use a local street / garden lighting visual only for street & garden services
@@ -149,7 +149,9 @@ export default function ServicesPage() {
                 <h2 className="text-base font-semibold text-black">
                   {service.title}
                 </h2>
-                <p className="mt-2 text-sm text-neutral-600">{service.summary}</p>
+                <p className="mt-2 text-sm text-neutral-600">
+                  {service.summary}
+                </p>
               </div>
               <span className="mt-4 text-xs font-semibold text-[#16a34a] group-hover:text-[#15803d]">
                 View details →
@@ -161,4 +163,3 @@ export default function ServicesPage() {
     </div>
   );
 }
-

@@ -26,7 +26,7 @@ const serviceLinks = [
     label: "Solar Water Pumps & Overhead Tanks",
   },
   { href: "/services/solar-tree", label: "Solar Trees" },
-  { href: "/services/solar-watch-towers", label: "Solar-Powered Watch Towers" },
+  { href: "/services/solar-watch-towers", label: "Watch Towers" },
 ];
 
 export function SiteHeader() {
@@ -38,9 +38,9 @@ export function SiteHeader() {
             <Image
               src="/drgreenLogo.png"
               alt="DR Green Energies logo"
-              width={32}
-              height={32}
-              className="h-8 w-auto"
+              width={80}
+              height={80}
+              className="h-20 w-auto"
               priority
             />
             {/* <span className="truncate text-base font-semibold text-black sm:text-lg">
