@@ -9,6 +9,7 @@ const navLinks = [
   { href: "/projects", label: "Projects" },
   { href: "/process", label: "Process" },
   { href: "/financing", label: "Financing / Subsidy" },
+  { href: "/careers", label: "Careers" },
   // { href: "/blog", label: "Blog / Resources" },
   { href: "/contact", label: "Contact Us" },
 ];
@@ -18,7 +19,10 @@ const serviceLinks = [
   { href: "/services/commercial", label: "Commercial Solar" },
   { href: "/services/industrial", label: "Industrial Solar" },
   { href: "/services/maintenance", label: "Operations & Maintenance" },
-  { href: "/services/street-garden-lights", label: "Street & Garden Solar Lights" },
+  {
+    href: "/services/street-garden-lights",
+    label: "Street & Garden Solar Lights",
+  },
   { href: "/services/solar-pergola", label: "Solar Pergola Structures" },
   { href: "/services/solar-carport", label: "Solar Carports" },
   {
@@ -113,7 +117,7 @@ export function SiteHeader() {
             href="/contact"
             className="hero-cta hidden rounded-full bg-[#16a34a] px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-[#15803d] md:inline-block"
           >
-            Free Consultation
+            Book a Free Consultation
           </Link>
           <MobileNav />
         </div>

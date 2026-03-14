@@ -1,7 +1,22 @@
+/** Normalize any display number to a valid tel: href (digits and leading +). */
+export function toTelHref(display: string): string {
+  const digits = display.replace(/\D/g, "");
+  if (display.trim().startsWith("+")) return `+${digits}`;
+  if (digits.length === 10) return `+91${digits}`;
+  if (digits.length === 11 && digits.startsWith("0"))
+    return `+91${digits.slice(1)}`;
+  return digits.startsWith("91") ? `+${digits}` : `+91${digits}`;
+}
+
 export const COMPANY = {
   name: "DR Green Energies",
   email: "drgreenenergies.hyd@gmail.com",
   phone: "+91 81259 91922",
+  /** Extra lines shown in footer; each opens the dialer when tapped. */
+  contactPhones: [
+    { display: "+91 81259 91922" },
+    // Add landline or second mobile, e.g. { display: "040-23405670" },
+  ] as const,
   whatsapp: "918125991922",
   gst: "36AAFZD4600N1ZW",
   address: {

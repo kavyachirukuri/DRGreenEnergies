@@ -36,12 +36,12 @@ export default function Home() {
               Premium Solar EPC Partner
             </p>
             <h1 className="text-balance text-2xl font-semibold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl">
-              Go solar with a trusted partner and cut your energy bills.
+              Go solar with a trusted partner and cut your power bills.
             </h1>
             <p className="max-w-xl text-base leading-relaxed text-neutral-200">
-              DR Green Energies designs, engineers, and commissions high-performance
-              solar plants for residential, commercial, and industrial customers –
-              with complete end-to-end project ownership.
+              DR Green Energies designs, engineers, and commissions
+              high-performance solar plants for residential, commercial, and
+              industrial customers – with complete end-to-end project ownership.
             </p>
             <div className="flex flex-col gap-3 sm:gap-4">
               <div className="flex flex-nowrap items-center gap-2 sm:gap-4">
@@ -169,8 +169,8 @@ export default function Home() {
                 End-to-end EPC ownership
               </h3>
               <p className="mt-2 text-sm text-neutral-600">
-                From design and engineering to installation, commissioning and AMC
-                – handled by a single expert team.
+                From design and engineering to installation, commissioning and
+                AMC – handled by a single expert team.
               </p>
             </div>
           </div>
@@ -266,7 +266,8 @@ export default function Home() {
               Recent solar projects
             </h2>
             <p className="mt-0.5 text-sm text-neutral-600">
-              A snapshot of residential, commercial and industrial installations.
+              A snapshot of residential, commercial and industrial
+              installations.
             </p>
           </div>
           <a
@@ -328,7 +329,9 @@ export default function Home() {
                     {project.location}
                   </p>
                 </div>
-                <p className="mt-3 text-sm text-neutral-600">{project.result}</p>
+                <p className="mt-3 text-sm text-neutral-600">
+                  {project.result}
+                </p>
               </div>
             </article>
           ))}

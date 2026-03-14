@@ -11,6 +11,7 @@ const navLinks = [
   { href: "/projects", label: "Projects" },
   { href: "/process", label: "Process" },
   { href: "/financing", label: "Financing / Subsidy" },
+  { href: "/careers", label: "Careers" },
   // { href: "/blog", label: "Blog / Resources" },
   { href: "/contact", label: "Contact Us" },
 ];
@@ -20,7 +21,10 @@ const serviceLinks = [
   { href: "/services/commercial", label: "Commercial Solar" },
   { href: "/services/industrial", label: "Industrial Solar" },
   { href: "/services/maintenance", label: "Operations & Maintenance" },
-  { href: "/services/street-garden-lights", label: "Street & Garden Solar Lights" },
+  {
+    href: "/services/street-garden-lights",
+    label: "Street & Garden Solar Lights",
+  },
   { href: "/services/solar-pergola", label: "Solar Pergola Structures" },
   { href: "/services/solar-carport", label: "Solar Carports" },
   {
@@ -60,8 +64,18 @@ export function MobileNav() {
               className="flex h-10 w-10 items-center justify-center rounded-lg text-neutral-600 transition hover:bg-neutral-100"
               aria-label="Close menu"
             >
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
             </button>
           </div>
@@ -147,12 +161,12 @@ export function MobileNav() {
               onClick={() => setOpen(false)}
               className="mt-4 flex min-h-[48px] items-center justify-center rounded-full bg-[#16a34a] px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-[#15803d] active:bg-green-700"
             >
-              Free Consultation
+              Book a Free Consultation
             </Link>
           </nav>
         </div>
       </>,
-      document.body
+      document.body,
     );
 
   return (
@@ -165,12 +179,32 @@ export function MobileNav() {
         aria-label={open ? "Close menu" : "Open menu"}
       >
         {open ? (
-          <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+          <svg
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
           </svg>
         ) : (
-          <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          <svg
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
           </svg>
         )}
       </button>
